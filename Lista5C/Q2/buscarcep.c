@@ -35,7 +35,7 @@ void procurarcep (char cep[], FILE * arquivo){
 			
 		if  (c == '\n'){ /* A cada quebra de linha ele não conta como um avanço no arquivo, então eu fiz isso para arrumar*/
 			
-			cont2++;
+			cont2++;  /* Se você usa Linux pode desconsiderar essa linha*/
 			
 			}	
 		 
@@ -62,10 +62,8 @@ int main(int argc, char **argv)
 	
 	FILE * enderecos;
 	
-	char cep[9];
-	gets(cep);
 	
-	enderecos = fopen("enderecos.txt","r"); 
+	enderecos = fopen( argv[2],"r"); 
 	
 	if (enderecos == NULL){ 
 		printf("ERROR: Não foi possível abrir o arquivo.\n"); 
@@ -74,7 +72,7 @@ int main(int argc, char **argv)
 	
 	
 	
-	procurarcep(cep, enderecos);
+	procurarcep(argv[1], enderecos);
 	
 	fclose(enderecos);
 
