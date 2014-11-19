@@ -1,0 +1,59 @@
+  QUESTÃO 4
+  
+  int f1(int n) { 
+    if (n <= 0) 
+      return 0; 
+    else if (n==1) 
+      return 1; 
+    return (n&1) + f1(n / 2); 
+  } 
+  
+  Como eu não tinha feito a questão anterior então não sabia que a resposta estava na 4, então eu demorei um pouco para 
+  descobrir o que essa função faz(Apesar de ter entendido a recursividade dela e o Bitwise).
+  
+  Explicando:
+  
+  f1(5);
+  
+  Pegando somente a parte da recursividade da função: return (n&1) + f1(n / 2)
+  ----------------------
+  (PRIMEIRA PARTE DA RECURSÃO)
+  
+  n=5
+  return (5&1)/* Operador Bitwise AND, ou seja ele vai comparar os bits do 5 e do 1 */  + f1( (5 / 2) = 2); 
+  
+  5 = 0101 
+  & 
+  1 = 0001
+  = 1 
+  
+  Após a primeira conta a função para para entrar na recursão.
+  
+  ----------------------
+  (SEGUNDA PARTE DA RECURSÃO)
+  n = 2
+  return (2&1) + f1( (2 / 2) = 1);
+  
+  2 = 0010
+  &
+  1 = 0001
+  = 0
+  
+  ----------------------
+  (TERCEIRA PARTE DA RECURSÃO)
+  n = 1
+  return (1&1) + f1(1 / 2);
+  
+  else if (n==1) 
+      return 1; (CASO BASE)
+  
+  FIM!
+  ----------------------
+  
+  Recursividade da função:
+  
+  1 <------return (5&1) + f1(2);
+                           0  <----  return (2&1) + f1(1);
+                                                     1  < ----return (2&1) + f1(2 / 2);
+  
+  Somando tudo vemos que f1(5) = 2, ou seja é quantidade de bits necessaria para formar esse numero.
