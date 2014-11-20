@@ -6,7 +6,7 @@
 
 Questão 1: PRONTA
 
-Questão 2: PRONTA (FOI COMPLICADO hahahahaha)
+Questão 2: PRONTA 
 
 Questão 3: RESPONDIDA NA 4
 
