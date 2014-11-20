@@ -54,7 +54,7 @@
   
   1 <------return (5&1) + f1(2);
                            0  <----  return (2&1) + f1(1);
-                                                     1  < ----return (2&1) + f1(2 / 2);
+                                                     1  < ----return (1&1) + f1(1 / 2);
   
   Somando tudo vemos que f1(5) = 2, ou seja é quantidade de bits necessaria para formar esse numero.
   
