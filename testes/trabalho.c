@@ -20,12 +20,12 @@ struct ListaDupla {
 
  
 
-void inserirMeio(struct ListaDupla * lista, int n){ /*LOOP INFINITO? */
+void inserirMeio(struct ListaDupla * lista, int n){ /*ARRUMADO!!! */
 	
 	struct ListaDuplaNo *aux;  /* Criando uma Auxiliar*/
 	aux = lista->inicio; /* Apontando a aux para o inicio para percorrer*/
 	int cont = 0; 
-	int x;
+	int x = 0;
 	
 	while (aux != NULL){
 		
@@ -36,14 +36,15 @@ void inserirMeio(struct ListaDupla * lista, int n){ /*LOOP INFINITO? */
 	
 	if (cont % 2 == 0){  /* Checando a metade da lista*/
 		
-		cont = cont/2;
+		cont = cont/2 - 1;
 		
 		}
 	else {
 		
-		cont = (cont + 2) /2;
+		cont = (cont + 2)/2 - 1;
 		
 		}
+
 	free(aux); /*Liberando Aux ja que não vai mais usar*/
 	
 	struct ListaDuplaNo * aux2; /* Criando outra auxiliar para fazer outra busca*/
@@ -51,8 +52,9 @@ void inserirMeio(struct ListaDupla * lista, int n){ /*LOOP INFINITO? */
 	
 	while (x != cont){ /*Vai parar exatamente na metade*/
 		
+		x++;
 		aux2 = aux2->proximo; 
-		x++	;
+		
 		
 	}	 
 	
@@ -137,7 +139,7 @@ int main(int argc, char **argv)
 					case 3: 
 							printf("DIGITE O NUMERO A SER INSERIDO NO MEIO DA LISTA \n");
 							scanf("%d",&x);
-							inserirMeio(lista,x); /*LOOP INFINITO?*/
+							inserirMeio(lista,x); /*ARRUMADO!!!*/
 							break;
 					case 4: 
 							ListarElementos(lista); /*Funcionando */
