@@ -20,7 +20,7 @@ struct ListaDupla {
 
  
 
-void inserirMeio(struct ListaDupla * lista, int n){
+void inserirMeio(struct ListaDupla * lista, int n){ /*LOOP INFINITO? */
 	
 	struct ListaDuplaNo *aux;  /* Criando uma Auxiliar*/
 	aux = lista->inicio; /* Apontando a aux para o inicio para percorrer*/
@@ -68,7 +68,7 @@ void inserirMeio(struct ListaDupla * lista, int n){
 }
 
 
-void Inserir (struct ListaDupla * lista, int n){
+void Inserir (struct ListaDupla * lista, int n){ /*Funcionando */
 	
 	struct ListaDuplaNo *novo;
 	novo = (struct ListaDuplaNo*)malloc(sizeof(struct ListaDuplaNo));
@@ -80,7 +80,7 @@ void Inserir (struct ListaDupla * lista, int n){
 		
 }
 
-void CriarLista (struct ListaDupla * lista, int n){
+void CriarLista (struct ListaDupla * lista, int n){ /*Funcionando */
 	
 	struct ListaDuplaNo *novo;
 	novo = (struct ListaDuplaNo*)malloc(sizeof(struct ListaDuplaNo));
@@ -92,7 +92,7 @@ void CriarLista (struct ListaDupla * lista, int n){
 	
 }
 
-void ListarElementos (struct ListaDupla * lista){
+void ListarElementos (struct ListaDupla * lista){ /*Funcionando */
 	
 	struct ListaDuplaNo *aux;
 	aux = lista->inicio;
@@ -127,20 +127,20 @@ int main(int argc, char **argv)
 					case 1: 
 							printf("DIGITE O NUMERO DO PRIMEIRO ELEMENTO DA LISTA \n");
 							scanf("%d",&x);
-							CriarLista(lista,x);
+							CriarLista(lista,x); /*Funcionando */
 							break;
 					case 2:
 							printf("DIGITE O NUMERO A SER INSERIDO NA LISTA \n");
 							scanf("%d",&x);
-							Inserir(lista,x);
-							break;
+							Inserir(lista,x); /*Funcionando */
+							break; 
 					case 3: 
 							printf("DIGITE O NUMERO A SER INSERIDO NO MEIO DA LISTA \n");
 							scanf("%d",&x);
-							inserirMeio(lista,x);
+							inserirMeio(lista,x); /*LOOP INFINITO?*/
 							break;
 					case 4: 
-							ListarElementos(lista);
+							ListarElementos(lista); /*Funcionando */
 							break;
 					
 			
